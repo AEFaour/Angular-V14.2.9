@@ -9,7 +9,8 @@ export class ArticleComponent implements OnInit {
   
   @Input() titreArticle: string;
   @Input() prixArticle: number;
-  ctrlArticle: boolean = true;
+  @Output() info = new EventEmitter<string>();
+ 
   textAltImg: string = "Titre alternative de l'image";
   urlImg: string = "https://via.placeholder.com/400x250";
   totalNbrLike : number = 0;
@@ -21,9 +22,10 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
   onLike(){
     this.totalNbrLike ++;
+    this.info.emit(this.titreArticle);
   }
 
 

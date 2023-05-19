@@ -17,11 +17,17 @@
 </nav>
 
 
+
 <!-- Contenu -->
 <div id="home" class="container">
-  <app-article [titreArticle]="titre1" [prixArticle]="prix1"></app-article>
-  <app-article [titreArticle]="titre2" [prixArticle]="prix2"></app-article>
-  <app-article [titreArticle]="titre3" [prixArticle]="prix3"></app-article>
+  <div id="alertMsg">
+    <p>
+      {{ message }}
+    </p>
+  </div>
+  <app-article [titreArticle]="titre1" [prixArticle]="prix1" (info)="onAffiche($event)"></app-article>
+  <app-article [titreArticle]="titre2" [prixArticle]="prix2" (info)="onAffiche($event)"></app-article>
+  <app-article [titreArticle]="titre3" [prixArticle]="prix3" (info)="onAffiche($event)"></app-article>
 </div>
 
 

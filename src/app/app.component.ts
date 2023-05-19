@@ -13,10 +13,16 @@ export class AppComponent implements OnInit {
   prix1: number = 80;
   prix2: number = 230;
   prix3: number = 15;
+  message: string = "";
+  
   constructor() { }
 
   ngOnInit(): void {
     console.log("Ici ngOnInit()");
+  }
+
+  onAffiche(arg: string) {
+    return this.message = "Merci d'avoir voté pour l'article : " + arg;
   }
 
 }
