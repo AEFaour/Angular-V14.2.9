@@ -1,5 +1,5 @@
 <!-- Menu -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">La Bonne Affaire</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -19,14 +19,14 @@
 
 <!-- Contenu -->
 <div id="home" class="container">
-<app-article></app-article>
-<app-article></app-article>
-<app-article></app-article>
+  <app-article [titreArticle]="titre1" [prixArticle]="prix1"></app-article>
+  <app-article [titreArticle]="titre2" [prixArticle]="prix2"></app-article>
+  <app-article [titreArticle]="titre3" [prixArticle]="prix3"></app-article>
 </div>
 
 
 <!-- Pied de page -->
-<footer class="py-5 bg-dark">
+<footer class="py-5 bg-danger">
   <div class="container">
     <p class="m-0 text-center text-white">Copyright &copy; La Bonne Affaire</p>
   </div>

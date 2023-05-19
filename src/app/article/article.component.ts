@@ -7,8 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
   
-  titreArticle: string = "Titre de l'article!";
-  prixArticle: number = 12;
+  @Input() titreArticle: string;
+  @Input() prixArticle: number;
   ctrlArticle: boolean = true;
   textAltImg: string = "Titre alternative de l'image";
   urlImg: string = "https://via.placeholder.com/400x250";
@@ -21,22 +21,7 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  onCtrlArticle() {
-
-    if (this.ctrlArticle === true) {
-      this.titreArticle = "Titre de l'article!";
-      this.ctrlArticle = false;
-      this.textAltImg = "Titre alternative de l'image L"
-      this.urlImg = "https://via.placeholder.com/600x375";
-    } else {
-      this.titreArticle = "---";
-      this.ctrlArticle = true;
-      this.textAltImg = "Titre alternative de l'image"
-      this.urlImg = "https://via.placeholder.com/400x250";
-
-    }
-  }
+  
   onLike(){
     this.totalNbrLike ++;
   }
