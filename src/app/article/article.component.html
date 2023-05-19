@@ -5,7 +5,8 @@
         <h6 class="card-title">{{prixArticle}}</h6>
         <p class="card-text">Une description</p>
 
-        <button class="btn btn-primary" (click)="onCtrlArticle()">J'aime</button>
+        <button class="btn btn-primary" (click)="onCtrlArticle(); onLike()">J'aime</button>
+        <p>Nombre de like : {{ totalNbrLike }}</p>
 
     </div>
 </div>

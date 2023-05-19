@@ -12,6 +12,7 @@ export class ArticleComponent implements OnInit {
   ctrlArticle: boolean = true;
   textAltImg: string = "Titre alternative de l'image";
   urlImg: string = "https://via.placeholder.com/400x250";
+  totalNbrLike : number = 0;
 
   constructor() { }
 
@@ -32,6 +33,9 @@ export class ArticleComponent implements OnInit {
       this.urlImg = "https://via.placeholder.com/400x250";
 
     }
+  }
+  onLike(){
+    this.totalNbrLike ++;
   }
 
 }
