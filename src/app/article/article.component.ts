@@ -15,7 +15,7 @@ export class ArticleComponent implements OnInit {
   urlImg: string = "https://via.placeholder.com/400x250";
   totalNbrLike : number = 0;
   comment : string = "Ceci est un commentaire";
-  
+  dispo : boolean = false;
 
 
   constructor() { }

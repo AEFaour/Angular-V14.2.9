@@ -7,6 +7,7 @@
 
         <button class="btn btn-warning" (click)="onLike()">J'aime</button>
         <p>Nombre de like : {{ totalNbrLike }}</p>
+        <span *ngIf="dispo === false">-Indisponible</span>
 
         <input type="text" placeholder="Ecris ton commentaire" [(ngModel)]="comment">
         <p>COMMENTAIRE : {{ comment }}</p>
