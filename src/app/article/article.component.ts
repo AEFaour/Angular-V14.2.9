@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-article',
@@ -6,13 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
-
+  
   titreArticle: string = "Titre de l'article!";
   prixArticle: number = 12;
   ctrlArticle: boolean = true;
   textAltImg: string = "Titre alternative de l'image";
   urlImg: string = "https://via.placeholder.com/400x250";
   totalNbrLike : number = 0;
+  comment : string = "Ceci est un commentaire";
+  
+
 
   constructor() { }
 
@@ -37,5 +40,6 @@ export class ArticleComponent implements OnInit {
   onLike(){
     this.totalNbrLike ++;
   }
+
 
 }
