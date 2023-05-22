@@ -15,6 +15,7 @@ export class ArticleComponent implements OnInit {
   @Input() dispo : boolean;
   @Output() info = new EventEmitter<string>();
  
+  colorText: string = "";
   
   totalNbrLike : number = 0;
   comment : string = "Ceci est un commentaire";
@@ -28,6 +29,11 @@ export class ArticleComponent implements OnInit {
   onLike(){
     this.totalNbrLike ++;
     this.info.emit(this.titreArticle);
+  }
+
+  getColor() {
+    this.dispo === true ? this.colorText =  "black" : this.colorText = "gold";
+    return this.colorText;
   }
 
 
