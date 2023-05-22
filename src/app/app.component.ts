@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 import { map, filter} from 'rxjs/operators';
 
 @Component({
@@ -9,6 +9,7 @@ import { map, filter} from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   secondes;
+  compteurSubscription: Subscription; 
 
   constructor() { }
 
@@ -21,11 +22,15 @@ export class AppComponent implements OnInit {
       )
     );
 
-    compteur.subscribe({
+    this.compteurSubscription = compteur.subscribe({
       next: (v) => this.secondes = v,
       error: (e) => console.error(e),
       complete: () => console.info('complete')
     })
+  }
+
+  ngOnDestroy() {
+    this.compteurSubscription.unsubscribe();
   }
 
 }
