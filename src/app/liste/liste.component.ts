@@ -10,15 +10,19 @@ import { DataService } from '../data.service';
 export class ListeComponent implements OnInit {
 
   message: string = "";
-  list;
+  liste;
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.list = this.dataService.listArticle;
+    this.liste = this.dataService.listeArticles;
   }
 
   onAffiche(arg: string) {
     return this.message = "Merci d'avoir voté pour l'article : " + arg;
+  }
+
+  getList() {
+    this.dataService.getListFromServer().subscribe(liste => { this.liste = liste });
   }
 
 }
