@@ -1,31 +1,33 @@
 <div class="card articleInfo">
     <img [src]="urlImg" [alt]="textAltImg">
-    <div class="card-body bg-danger">
-        <h4 class="card-title">{{titreArticle | uppercase}}</h4>
-        <h5 class="card-title" [ngStyle]="{color : getColor()}">{{prixArticle}}
-            <span *ngIf="dispo === false">-Indisponible</span>
+    <div class="card-body">
+        <h5 class="card-title" [ngStyle]="{ color: getColor() }">
+            {{ titreArticle | uppercase }}
+            <span *ngIf="dispo === false;"> - Indisponible</span>
         </h5>
+        <h6 class="card-title">{{ prixArticle }} €</h6>
         <p class="card-text">Une description</p>
+        <a routerLink="details"> => Voir l'article</a>
+        <hr>
         <button (click)="onLike()" [ngClass]="
-        {
-            'show': jaime === true,
-            'hidden': jaime === false
-        }">
+            {
+                'show': jaime === true,
+                'hidden': jaime === false
+            }">
             J'aime
         </button>
 
         <button class="nolike" (click)="onLike()" [ngClass]="
-        {
-            'show': jaime === false,
-            'hidden': jaime === true
-        }">
+            {
+                'show': jaime === false,
+                'hidden': jaime === true
+            }">
             Je n'aime pas
         </button>
-        <p>Nombre de like : {{ totalNbrLike }}</p>
 
+        <p>Nombre de like : {{ totalNbrLike }}</p>
 
         <input type="text" placeholder="Ecris ton commentaire" [(ngModel)]="comment">
         <p>COMMENTAIRE : {{ comment }}</p>
-
     </div>
 </div>
