@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
   
+  @Input() idArticle: number;
   @Input() titreArticle: string;
   @Input() prixArticle: number;
   @Input() description : string;
