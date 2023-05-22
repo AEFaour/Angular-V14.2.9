@@ -6,8 +6,21 @@
             <span *ngIf="dispo === false">-Indisponible</span>
         </h5>
         <p class="card-text">Une description</p>
+        <button (click)="onLike()" [ngClass]="
+        {
+            'show': jaime === true,
+            'hidden': jaime === false
+        }">
+            J'aime
+        </button>
 
-        <button class="btn btn-warning" (click)="onLike()">J'aime</button>
+        <button class="nolike" (click)="onLike()" [ngClass]="
+        {
+            'show': jaime === false,
+            'hidden': jaime === true
+        }">
+            Je n'aime pas
+        </button>
         <p>Nombre de like : {{ totalNbrLike }}</p>
 
 

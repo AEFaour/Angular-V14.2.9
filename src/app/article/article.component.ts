@@ -15,6 +15,7 @@ export class ArticleComponent implements OnInit {
   @Input() dispo : boolean;
   @Output() info = new EventEmitter<string>();
  
+  jaime: boolean = true;
   colorText: string = "";
   
   totalNbrLike : number = 0;
@@ -27,7 +28,13 @@ export class ArticleComponent implements OnInit {
   }
 
   onLike(){
-    this.totalNbrLike ++;
+    if (this.jaime === true) {
+      this.totalNbrLike++;
+      this.jaime = false;
+    } else {
+      this.totalNbrLike--;
+      this.jaime = true;
+    }
     this.info.emit(this.titreArticle);
   }
 
