@@ -9,13 +9,15 @@ export class ArticleComponent implements OnInit {
   
   @Input() titreArticle: string;
   @Input() prixArticle: number;
+  @Input() description : string;
+  @Input() urlImg : string;
+  @Input() textAltImg: string;
+  @Input() dispo : boolean;
   @Output() info = new EventEmitter<string>();
  
-  textAltImg: string = "Titre alternative de l'image";
-  urlImg: string = "https://via.placeholder.com/400x250";
+  
   totalNbrLike : number = 0;
   comment : string = "Ceci est un commentaire";
-  dispo : boolean = false;
 
 
   constructor() { }

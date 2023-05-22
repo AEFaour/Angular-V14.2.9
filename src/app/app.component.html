@@ -17,22 +17,23 @@
 </nav>
 
 
-
 <!-- Contenu -->
-<div id="home" class="container">
+<div class="container">
   <div id="alertMsg">
     <p>
       {{ message }}
     </p>
   </div>
-  <app-article [titreArticle]="titre1" [prixArticle]="prix1" (info)="onAffiche($event)"></app-article>
-  <app-article [titreArticle]="titre2" [prixArticle]="prix2" (info)="onAffiche($event)"></app-article>
-  <app-article [titreArticle]="titre3" [prixArticle]="prix3" (info)="onAffiche($event)"></app-article>
+  <div id="home">
+    <app-article *ngFor="let element of list" [titreArticle]="element.titreArticle" [prixArticle]="element.prixArticle"
+      [description]="element.description" [urlImg]="element.urlImg" [textAltImg]="element.textAltImg"
+      [dispo]="element.dispo" (info)="onAffiche($event)"></app-article>
+  </div>
 </div>
 
 
 <!-- Pied de page -->
-<footer class="py-5 bg-danger">
+<footer class=" py-5 bg-danger">
   <div class="container">
     <p class="m-0 text-center text-white">Copyright &copy; La Bonne Affaire</p>
   </div>

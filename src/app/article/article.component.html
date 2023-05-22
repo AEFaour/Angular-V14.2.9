@@ -2,12 +2,14 @@
     <img [src]="urlImg" [alt]="textAltImg">
     <div class="card-body bg-danger">
         <h4 class="card-title">{{titreArticle}}</h4>
-        <h5 class="card-title">{{prixArticle}}</h5>
+        <h5 class="card-title">{{prixArticle}}
+            <span *ngIf="dispo === false">-Indisponible</span>
+        </h5>
         <p class="card-text">Une description</p>
 
         <button class="btn btn-warning" (click)="onLike()">J'aime</button>
         <p>Nombre de like : {{ totalNbrLike }}</p>
-        <span *ngIf="dispo === false">-Indisponible</span>
+
 
         <input type="text" placeholder="Ecris ton commentaire" [(ngModel)]="comment">
         <p>COMMENTAIRE : {{ comment }}</p>
