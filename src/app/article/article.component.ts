@@ -6,7 +6,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
-  
+
+  totalNbrLike : number = 0;
+  comment : string = "Ceci est un commentaire";
+  @Output() info = new EventEmitter<string>();
+
   @Input() idArticle: number;
   @Input() titreArticle: string;
   @Input() prixArticle: number;
@@ -14,14 +18,9 @@ export class ArticleComponent implements OnInit {
   @Input() urlImg : string;
   @Input() textAltImg: string;
   @Input() dispo : boolean;
-  @Output() info = new EventEmitter<string>();
- 
   jaime: boolean = true;
-  colorText: string = "";
-  
-  totalNbrLike : number = 0;
-  comment : string = "Ceci est un commentaire";
 
+  colorText: string = "";
 
   constructor() { }
 
